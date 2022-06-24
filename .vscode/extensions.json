@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "pantajoe.vscode-elixir-credo",
+    "animus-coop.vscode-elixir-mix-formatter",
+    "jakebecker.elixir-ls",
+    "phoenixframework.phoenix",
+    "bradlc.vscode-tailwindcss",
+    "sutter-nicolas.tailwind-loves-sass-snippets",
+    "macieklad.tailwind-sass-syntax"
+  ]
+}
