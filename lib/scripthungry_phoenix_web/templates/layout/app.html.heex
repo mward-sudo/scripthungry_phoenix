@@ -1,5 +1,13 @@
 <main class="container mx-auto">
-  <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-  <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+  <%= Enum.map(get_flash(@conn), fn {k, v} -> %>    
+    <%= case k do %>
+      <% "info" -> %>     <p class="alert alert-info my-4 text-2xl">   <%= v %></p>
+      <% "error" -> %>    <p class="alert alert-error my-4 text-2xl">  <%= v %></p>
+      <% "success" -> %>  <p class="alert alert-success my-4 text-2xl"><%= v %></p>
+      <% _ -> %>          <p class="alert my-4 text-2xl">              <%= v %></p>
+    <% end %>
+  <% end ) %>
+
   <%= @inner_content %>
 </main>
