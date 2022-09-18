@@ -8,6 +8,7 @@ defmodule ScripthungryPhoenixWeb.Router do
     plug :put_root_layout, {ScripthungryPhoenixWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug ScripthungryPhoenixWeb.Plugs.CopyrightDate, 2021
   end
 
   pipeline :api do
