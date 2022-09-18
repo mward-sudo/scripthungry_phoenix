@@ -32,3 +32,4 @@ scripthungry_phoenix-*.tar
 npm-debug.log
 /assets/node_modules/
 
+.elixir_ls/
