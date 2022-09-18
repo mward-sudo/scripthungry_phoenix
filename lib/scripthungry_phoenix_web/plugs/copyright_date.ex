@@ -8,13 +8,14 @@ defmodule ScripthungryPhoenixWeb.Plugs.CopyrightDate do
 
   def call(conn, start_year) do
     # Calculate copyright date, either current year or range of years starting
-    # with the year the project was created, 2022.
+    # with start_year.
     current_year = DateTime.utc_now() |> Map.fetch!(:year)
 
-    if current_year > start_year do
-      assign(conn, :copyright_date, "#{start_year}-#{current_year}")
-    else
-      assign(conn, :copyright_date, "#{current_year}")
-    end
+    copyright_date =
+      if current_year > start_year,
+        do: "#{start_year}-#{current_year}",
+        else: "#{current_year}"
+
+    assign(conn, :copyright_date, copyright_date)
   end
 end
